@@ -19,7 +19,24 @@ $sendMailParams = @{
 
 Send-MailMessage @sendMailParams
 
+
+
 3.) test 3
+# Source https://blog.mailtrap.io/powershell-send-email/
+
+$From = "mother-of-dragons@houseoftargaryen.net"
+$To = "jon-snow@winterfell.com", "jorah-mormont@night.watch”
+$Cc = "tyrion-lannister@westerlands.com"
+$Attachment = "C:\Temp\Drogon.jpg"
+$Subject = "Photos of Drogon"
+$Body = "<h2>Guys, look at these pics of Drogon!</h2><br><br>"
+$Body += “He is so cute!” 
+$SMTPServer = "smtp.mailtrap.io"
+$SMTPPort = "587"
+Send-MailMessage -From $From -to $To -Cc $Cc -Subject $Subject -Body $Body -BodyAsHtml -SmtpServer $SMTPServer -Port $SMTPPort -UseSsl -Credential (Get-Credential) -Attachments $Attachment
+
+4) test 4
+
 # Source https://www.undocumented-features.com/2018/05/22/send-authenticated-smtp-with-powershell/
 
 # Sender and Recipient Info
