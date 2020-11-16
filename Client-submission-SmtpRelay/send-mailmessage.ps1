@@ -72,3 +72,25 @@ $Smtp = New-Object Net.Mail.SmtpClient($SmtpServer,$SmtpPort)
 $Smtp.EnableSsl = $true
 $Smtp.Credentials = New-Object System.Net.NetworkCredential($Username,$Password)
 $Smtp.Send($Message)
+
+4) test 5
+
+#Ask for credentials and store them
+$credential = Get-Credential
+$credential.Password | ConvertFrom-SecureString | Set-Content C:\Passwords\scriptsencrypted_password1.txt
+# Read encrypted password
+$encrypted = Get-Content C:\Passwords\scriptsencrypted_password1.txt | ConvertTo-SecureString
+# Set variables
+$emailusername = "Email@domain.com"
+$credential = New-Object System.Management.Automation.PsCredential($emailusername, $encrypted)
+# Email parametres
+$Body = "Test email. This is a notification from Powershell."
+$Subject = "Powershell Notification"
+$EmailFrom = "Email@domain.com"
+$EmailTo = "Email@domain.com"
+$SMTPServer = "smtp.gmail.com"
+$SMTPClient = New-Object Net.Mail.SmtpClient($SmtpServer, 587)
+$SMTPClient.EnableSsl = $true
+$SMTPClient.Credentials = $credential;
+# Send email
+$SMTPClient.Send($EmailFrom, $EmailTo, $Subject, $Body)
