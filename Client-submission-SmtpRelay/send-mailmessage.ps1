@@ -2,6 +2,7 @@
 
 Send-MailMessage -SmtpServer 'smtp.office365.com' -From ‘sender@domain.com' -To 'someemail@domain.com' -Subject 'this is a subject' -Body 'this is the body' -UseSsl -Port 587 -Credential $credential -Verbose
 
+-------------------------------------------------------------------------------------
 
 2.)	test 2
 
@@ -19,7 +20,7 @@ $sendMailParams = @{
 
 Send-MailMessage @sendMailParams
 
-
+-------------------------------------------------------------------------------------
 
 3.) test 3
 # Source https://blog.mailtrap.io/powershell-send-email/
@@ -29,11 +30,21 @@ $To = "jon-snow@winterfell.com", "jorah-mormont@night.watch”
 $Cc = "tyrion-lannister@westerlands.com"
 $Attachment = "C:\Temp\Drogon.jpg"
 $Subject = "Photos of Drogon"
-$Body = "<h2>Guys, look at these pics of Drogon!</h2><br><br>"
-$Body += “He is so cute!” 
-$SMTPServer = "smtp.mailtrap.io"
+$Body = @'
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+This is a test message to trigger an ETR.
+</body>
+</html>
+'@
+$SMTPServer = "smtp.office365.com"
 $SMTPPort = "587"
 Send-MailMessage -From $From -to $To -Cc $Cc -Subject $Subject -Body $Body -BodyAsHtml -SmtpServer $SMTPServer -Port $SMTPPort -UseSsl -Credential (Get-Credential) -Attachments $Attachment
+
+-------------------------------------------------------------------------------------
 
 4) test 4
 
@@ -48,8 +59,8 @@ $Username = "SomeUsername@SomeDomain.com"
 $Password = "SomePassword"
 
 # Server Info
-$SmtpServer = "smtp.domain.com"
-$SmtpPort = "2525"
+$SmtpServer = "smtp.office365.com"
+$SmtpPort = "587"
 
 # Message stuff
 $MessageSubject = "Live your best life now" 
@@ -73,7 +84,9 @@ $Smtp.EnableSsl = $true
 $Smtp.Credentials = New-Object System.Net.NetworkCredential($Username,$Password)
 $Smtp.Send($Message)
 
-4) test 5
+-------------------------------------------------------------------------------------
+
+5) test 5
 
 #Ask for credentials and store them
 $credential = Get-Credential
@@ -84,11 +97,24 @@ $encrypted = Get-Content C:\Passwords\scriptsencrypted_password1.txt | ConvertTo
 $emailusername = "Email@domain.com"
 $credential = New-Object System.Management.Automation.PsCredential($emailusername, $encrypted)
 # Email parametres
-$Body = "Test email. This is a notification from Powershell."
+
+# $Body = "Test email. This is a notification from Powershell."
+
+$Body = @'
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+This is a test message to trigger an ETR.
+</body>
+</html>
+'@
+
 $Subject = "Powershell Notification"
 $EmailFrom = "Email@domain.com"
 $EmailTo = "Email@domain.com"
-$SMTPServer = "smtp.gmail.com"
+$SMTPServer = "smtp.office365.com"
 $SMTPClient = New-Object Net.Mail.SmtpClient($SmtpServer, 587)
 $SMTPClient.EnableSsl = $true
 $SMTPClient.Credentials = $credential;
