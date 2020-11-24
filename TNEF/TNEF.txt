@@ -1,0 +1,5 @@
+On the sender side check the Mail Contact settings for the Recipient, how is the rich text format setting there, 
+https://support.microsoft.com/en-us/help/2487954/how-to-specify-the-email-message-format-that-s-used-for-external-recip
+ 
+or if recipient is Outlook Contact on sender side, check 
+https://support.microsoft.com/en-us/help/290809/how-e-mail-message-formats-affect-internet-e-mail-messages-in-outlook
