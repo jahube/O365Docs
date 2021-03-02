@@ -1,0 +1,5 @@
+* Messages not routed to onprem in centralized mailflow scenario
+https://docs.microsoft.com/en-US/exchange/troubleshoot/email-delivery/hybrid-messages-not-routed-through-on-premises
+Messages sent between two Cloud mailboxes.
+Messages that originate from On-Premises but are then forwarded by the cloud mailbox, we do not send the message back to On-Premises because the message originated from On-Premises. See KB: https://support.microsoft.com/en-us/kb/3194415 
+Messages that originate from the Cloud which triggers a transport rule redirecting the message to a specific outbound connector.
