@@ -1,0 +1,1 @@
+https://docs.microsoft.com/en-us/exchange/mailbox-migration/migrating-imap-mailboxes/imap-migration-in-the-admin-center
