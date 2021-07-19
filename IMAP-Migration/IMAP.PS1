@@ -1,18 +1,34 @@
+secureimap.t-online.de 993
+--------------------------
 $EndpointName = "T-Online-IMAP-Endpoint"
 $IMAPserver = "secureimap.t-online.de"  # imapmail.t-online.de
 $Port = "993" ; $security = "Ssl"
-
+-----------------------------------
+ionos.de 993
+------------
+https://www.ionos.de/hilfe/office/microsoft-365-einrichten/e-mails-aus-ionos-e-mail-postfaechern-zu-microsoft-365-migrieren/
+-----------------------------------
+ionos.com 993
+-------------
+https://www.ionos.com/help/office/setting-up-microsoft-365/migrating-emails-from-11-ionos-mail-accounts-to-office-365/
+-----------------------------------
 $EndpointName = "IONOS-IMAP-Endpoint" # https://www.ionos.com/help/email/email-migration-service/migrating-emails-and-folders-from-an-external-email-provider-to-ionos/
 $IMAPserver = "imap.ionos.de" 
 $Port = "993" ; $security = "Ssl"
-
+-----------------------------------
+imap.gmx.com 993
+----------------
 $EndpointName = "GMX-IMAP-Endpoint" # Enable IMAP first // https://hilfe.gmx.net/pop-imap/einschalten.html
 $IMAPserver = "imap.gmx.com"
 $Port = "993" ; $security = "Ssl"
 
+-----------------------------------
+imap.gmail.com 993
+------------------
 $EndpointName = "GMAIL-IMAP-Endpoint"
 $IMAPserver = "imap.gmail.com"
 $Port = "993" ; $security = "Ssl" 
+-----------------------------------
 
 # Reference - Ports: IMAP(no ssl)143 (IMAP/TLS)993 (SMTP)587 (SSL)443
 
