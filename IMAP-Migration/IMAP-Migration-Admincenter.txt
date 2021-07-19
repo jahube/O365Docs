@@ -1,1 +1,3 @@
 https://docs.microsoft.com/en-us/exchange/mailbox-migration/migrating-imap-mailboxes/imap-migration-in-the-admin-center
+
+https://www.ionos.de/hilfe/office/microsoft-365-einrichten/e-mails-aus-ionos-e-mail-postfaechern-zu-microsoft-365-migrieren/
