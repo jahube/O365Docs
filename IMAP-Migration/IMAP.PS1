@@ -21,7 +21,6 @@ imap.gmx.com 993
 $EndpointName = "GMX-IMAP-Endpoint" # Enable IMAP first // https://hilfe.gmx.net/pop-imap/einschalten.html
 $IMAPserver = "imap.gmx.com"
 $Port = "993" ; $security = "Ssl"
-
 -----------------------------------
 imap.gmail.com 993
 ------------------
@@ -29,7 +28,6 @@ $EndpointName = "GMAIL-IMAP-Endpoint"
 $IMAPserver = "imap.gmail.com"
 $Port = "993" ; $security = "Ssl" 
 -----------------------------------
-
 # Reference - Ports: IMAP(no ssl)143 (IMAP/TLS)993 (SMTP)587 (SSL)443
 
 New-MigrationEndpoint -IMAP -Name $EndpointName -RemoteServer $IMAPserver -Port $Port -Security $security
